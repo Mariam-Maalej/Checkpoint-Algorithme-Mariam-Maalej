@@ -1,0 +1,35 @@
+ALGORITHM algorithm_name
+VAR
+    nv : INTEGER:=0;
+    ls : INTEGER:=0;
+    nw : INTEGER:=0;
+    i : INTEGER;
+    sentence: STRING;
+BEGIN
+    Write ('Write a sentence which ends with point')
+    Read(sentence)
+    FOR i FROM 1 TO length(sentence) STEP step  DO
+      SWITCH (variable) DO
+          case (sentence[i]='a') : nv:=nv+1;
+          case (sentence[i]='e') : nv:=nv+1;
+          case (sentence[i]='i') : nv:=nv+1;
+          case (sentence[i]='o') : nv:=nv+1;
+          case (sentence[i]='u') : nv:=nv+1;
+          case (sentence[i]='A') : nv:=nv+1;
+          case (sentence[i]='E') : nv:=nv+1;
+          case (sentence[i]='I') : nv:=nv+1;
+          case (sentence[i]='O') : nv:=nv+1;
+          case (sentence[i]='U') : nv:=nv+1;
+      END_SWITCH
+    END_FOR
+    FOR i FROM 1 TO length(sentence) STEP step  DO
+        IF (sentence[i]<> ' ') THEN
+            ls:=ls+1;
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO length(sentence) STEP step  DO
+        IF (sentence[i+1]=' ') THEN
+            nw:=nw+1;
+        END_IF
+    END_FOR
+END
